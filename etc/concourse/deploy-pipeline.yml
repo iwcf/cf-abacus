@@ -5,8 +5,8 @@ resources:
     source:
       uri: {{landscape-git-repo}}
       branch: {{landscape-git-repo-branch}}
-      paths: [cf-abacus,abacus-config]
-      private_key: {{landscape-git-repo-private-key}}
+#      paths: [cf-abacus,abacus-config]
+#      private_key: {{landscape-git-repo-private-key}}
       skip-ssl-verification: true
 
 jobs:
@@ -65,6 +65,9 @@ jobs:
             HYSTRIX_CLIENT_SECRET: {{hystrix-client-secret}
             SKIP_SSL_VALIDATION: {{skip-ssl-validation}}
             BIND_SECURITY_GROUP: {{bind-security-group}}
+            ABACUS_ORG_MEMORY_QUOTA: {{abacus-org-memory-quota}}
+            ABACUS_ORG_ROUTES_QUOTA: {{abacus-org-routes-quota}}
+            ABACUS_ORG_SERVICES_QUOTA: {{abacus-org-services-quota}}
           run:
             path: landscape/cf-abacus/etc/concourse/scripts/cf-deploy-infra
 
