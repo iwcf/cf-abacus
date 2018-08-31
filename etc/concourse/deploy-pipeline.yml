@@ -62,7 +62,7 @@ jobs:
             OBJECT_STORAGE_CLIENT_ID: {{object-storage-client-id}}
             OBJECT_STORAGE_CLIENT_SECRET: {{object-storage-client-secret}}
             HYSTRIX_CLIENT_ID: {{hystrix-client-id}}
-            HYSTRIX_CLIENT_SECRET: {{hystrix-client-secret}
+            HYSTRIX_CLIENT_SECRET: {{hystrix-client-secret}}
             SKIP_SSL_VALIDATION: {{skip-ssl-validation}}
             BIND_SECURITY_GROUP: {{bind-security-group}}
             ABACUS_ORG_MEMORY_QUOTA: {{abacus-org-memory-quota}}
