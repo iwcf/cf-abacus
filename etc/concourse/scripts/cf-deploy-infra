@@ -12,7 +12,7 @@ fi
 echo "Logging to $CF_SYS_DOMAIN as admin ..."
 cf api $skip "https://api.$CF_SYS_DOMAIN"
 
-echo "" | cf login $skip -u "$CF_ADMIN_USER" -p "$CF_ADMIN_PASSWORD"
+echo "" | cf login $skip -u "$CF_ADMIN_USER" -p "$CF_ADMIN_PASSWORD"  -o "$CF_ORG" -s "$CF_SPACE"
 
 echo "Recreating organization and space ..."
 cf create-quota "$CF_ORG" -m "$ABACUS_ORG_MEMORY_QUOTA" -i 4g -r "$ABACUS_ORG_ROUTES_QUOTA" -s "$ABACUS_ORG_SERVICES_QUOTA" --allow-paid-service-plans
