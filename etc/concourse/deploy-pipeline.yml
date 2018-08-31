@@ -69,7 +69,7 @@ jobs:
             ABACUS_ORG_ROUTES_QUOTA: {{abacus-org-routes-quota}}
             ABACUS_ORG_SERVICES_QUOTA: {{abacus-org-services-quota}}
           run:
-            path: landscape/cf-abacus/etc/concourse/scripts/cf-deploy-infra
+            path: landscape/etc/concourse/scripts/cf-deploy-infra
 
   - name: abacus-deploy
     serial_groups: [abacus-deploy]
@@ -93,7 +93,7 @@ jobs:
             outputs:
               - name: built-project
             run:
-              path: landscape/cf-abacus/etc/concourse/scripts/cf-deploy-build
+              path: landscape/etc/concourse/scripts/cf-deploy-build
             params:
               AUTH_SERVER: {{auth-server}}
               JWTKEY: {{jwtkey}}
@@ -119,7 +119,7 @@ jobs:
             inputs:
               - name: landscape
             run:
-              path: landscape/cf-abacus/etc/concourse/scripts/create-uaa-clients
+              path: landscape/etc/concourse/scripts/create-uaa-clients
             params:
               CF_SYS_DOMAIN: {{cf-sys-domain}}
               UAA_ADMIN: {{uaa-admin}}
